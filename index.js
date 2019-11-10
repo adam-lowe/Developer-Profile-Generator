@@ -43,7 +43,12 @@ inquirer.prompt([
       if (fs.existsSync('./profile.md')) {fs.unlinkSync('./profile.md');}
       appendData('# ', 'name', '', res);
       appendData('![avatar picture](', 'avatar_url', ')', res);
+      appendData('Username: ', 'login', '', res);
       appendData('Bio: ', 'bio', '', res);
+      appendData('Following: ', 'following', '', res);
+      appendData('Followers: ', 'followers', '', res);
+      appendData('Public Repos: ', 'public_repos', '', res);
+      appendData('[Github Profile](', 'html_url', ')', res);
     })
     .catch(err => {
         console.error(err); 
