@@ -23,8 +23,8 @@ inquirer.prompt([
       ]
     }
   ])  .then(function(response) {
-    const username = response.gituser
-    const favcolor = response.color
+    const username = response.gituser;
+    const favcolor = response.color;
     const queryUrl = `https://api.github.com/users/${username}`;
     axios.get(queryUrl)
     .then(res => {
@@ -42,6 +42,6 @@ inquirer.prompt([
     })
     .catch(err => {
         console.error(err); 
-    })
+    });
   });
   
