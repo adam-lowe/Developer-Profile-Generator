@@ -29,6 +29,16 @@ inquirer.prompt([
     axios.get(queryUrl)
     .then(res => {
         console.log(res.data)
+        fs.appendFile("profile.md", res.data.name + '\n', function(err) {
+
+            if (err) {
+              console.log(err);
+            }
+            else {
+              console.log("Commit logged!");
+            }
+          
+          });
     })
     .catch(err => {
         console.error(err); 
