@@ -1,6 +1,6 @@
-const inquirer = require('inquirer')
-const fs = require('fs')
-const axios = require('axios')
+const inquirer = require('inquirer');
+const fs = require('fs');
+const axios = require('axios');
 
 inquirer.prompt([
     {
@@ -28,7 +28,7 @@ inquirer.prompt([
     const queryUrl = `https://api.github.com/users/${username}`;
     axios.get(queryUrl)
     .then(res => {
-        console.log(res.data)
+        console.log(res.data);
         fs.appendFile("profile.md", res.data.name + '\n', function(err) {
 
             if (err) {
