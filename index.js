@@ -39,8 +39,7 @@ inquirer.prompt([
     const queryUrl = `https://api.github.com/users/${username}`;
     axios.get(queryUrl)
     .then(res => {
-        console.log(res.data);
-        fs.appendFile("profile.md", res.data.name + '\n', function(err) {
+      if (fs.existsSync('./profile.md')) {fs.unlinkSync('./profile.md');}
       appendData('# ', 'name', '', res);
       appendData('![avatar picture](', 'avatar_url', ')', res);
       appendData('Bio: ', 'bio', '', res);
