@@ -43,7 +43,7 @@ inquirer.prompt([
       }
       
       if (fs.existsSync('./profile.md')) { fs.unlinkSync('./profile.md'); }
-      appendData('# ', 'name', '');
+      appendData(`# <span style="color:${favcolor}">`, 'name', '</span>');
       appendData('![avatar picture](', 'avatar_url', ')');
       appendData('Username: ', 'login', '');
       appendData('Bio: ', 'bio', '');
