@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
 
+// function to make appending to aspects of response to file easier
 function appendData(prePend, daType, apPend, rest) {
   fs.appendFileSync("profile.md", prePend + rest.data[daType]+ apPend + '\n\n', function(err) {
 
@@ -12,7 +13,7 @@ function appendData(prePend, daType, apPend, rest) {
     });
   
 }
-
+// inquirer questions
 inquirer.prompt([
     {
       type: "input",
@@ -43,13 +44,6 @@ inquirer.prompt([
       appendData('# ', 'name', '', res);
       appendData('![avatar picture](', 'avatar_url', ')', res);
       appendData('Bio: ', 'bio', '', res);
-      // fs.appendFileSync("profile.md", res.data.name + '\n', function(err) {
-
-      //   if (err) {
-      //     console.log(err);
-      //   }
-
-      //   });
     })
     .catch(err => {
         console.error(err); 
