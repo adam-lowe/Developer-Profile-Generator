@@ -9,4 +9,4 @@ Create a node javascript program that asks for github username and favorite colo
 ## Gif and Screenshot
 
    ![Code in use](./images/working.gif)
-   ![Code Output](./images/working.png)
+   ![Code Output](./images/working1.png)
