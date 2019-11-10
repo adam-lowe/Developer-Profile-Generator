@@ -11,7 +11,7 @@ inquirer.prompt([
     {
       type: "list",
       message: "What is your favorite color?",
-      name: "contact",
+      name: "color",
       choices: [
         "red",
         "orange",
