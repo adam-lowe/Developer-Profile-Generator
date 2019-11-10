@@ -1,4 +1,4 @@
-# Homework 6 - Weather Dashboard
+# Homework 7 - Developer Profile Generator
 
 This repo is for the UNCC coding bootcamp's Seventh homework assignment
 
