@@ -48,6 +48,7 @@ inquirer.prompt([
       appendData('Following: ', 'following', '', res);
       appendData('Followers: ', 'followers', '', res);
       appendData('Public Repos: ', 'public_repos', '', res);
+      appendData('Location: ', 'location', '', res);
       appendData('[Github Profile](', 'html_url', ')', res);
     })
     .catch(err => {
