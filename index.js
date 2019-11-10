@@ -2,6 +2,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
 
+function appendData(prePend, daType, apPend, rest) {
+  fs.appendFileSync("profile.md", prePend + rest.data[daType]+ apPend + '\n\n', function(err) {
+
+    if (err) {
+      console.log(err);
+    }
+    
+    });
+  
+}
+
 inquirer.prompt([
     {
       type: "input",
@@ -30,15 +41,16 @@ inquirer.prompt([
     .then(res => {
         console.log(res.data);
         fs.appendFile("profile.md", res.data.name + '\n', function(err) {
+      appendData('# ', 'name', '', res);
+      appendData('![avatar picture](', 'avatar_url', ')', res);
+      appendData('Bio: ', 'bio', '', res);
+      // fs.appendFileSync("profile.md", res.data.name + '\n', function(err) {
 
-            if (err) {
-              console.log(err);
-            }
-            else {
-              console.log("Commit logged!");
-            }
-          
-          });
+      //   if (err) {
+      //     console.log(err);
+      //   }
+
+      //   });
     })
     .catch(err => {
         console.error(err); 
